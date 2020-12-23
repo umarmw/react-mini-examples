@@ -1,0 +1,453 @@
+You are inside question view of Maximum Substring
+
+57m left
+Skip to main content
+ALL
+
+1
+2
+1. Maximum Substring
+A substring is a contiguous sequence of characters within a string. Given a string determine the alphabetically maximum substring.
+
+ 
+
+Example
+
+s = 'baca'
+
+ 
+
+The unique substrings: ['b', 'ba', 'bac', 'baca', 'a', 'ac', 'aca', 'c', 'ca']
+
+Arranging the substrings alphabetically: ['a', 'ac', 'aca', 'b', 'ba', 'bac', 'baca', 'c', 'ca']
+
+The maximum substring alphabetically: 'ca'
+
+ 
+
+Function Description
+
+Complete the function maxSubstring in the editor below.
+
+ 
+
+maxSubstring has the following parameter(s):
+
+    string s:  a string
+
+ 
+
+Returns
+
+    string: the maximum substring in s
+
+ 
+
+Constraints
+
+1 ≤ length of s ≤ 100
+all characters of s are in the range ascii[a-z]
+ 
+
+Input Format for Custom Testing
+Sample Case 0
+Sample Input
+
+STDIN     Function
+-----     -----
+ba     →  s = 'ba'
+ 
+
+Sample Output
+
+ba
+ 
+
+Explanation
+
+s = 'ba'
+
+The alphabetically-ordered set of unique substrings of s is ['a', 'b', 'ba'].
+
+ 
+
+Sample Case 1
+Sample Case 2
+JavaScript (Node.js)
+Autocomplete Ready
+
+
+
+
+47484950515253545556
+            stringCombination.push(str.slice(i, str.length)); 
+        }
+    }
+    let uniqueCombination = [...singleLetters, ...stringCombination] ;
+    console.log(uniqueCombination);
+    return uniqueCombination;
+}
+
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+
+Line: 49 Col: 36
+
+Test Results
+
+Custom Input
+
+Run
+
+
+Submit Code
+Compiled successfully.
+
+Run all test cases
+Input (stdin)
+ba
+Your Output (stdout)
+b,a,ba
+Expected Output
+ba
+Debug output
+[ 'b', 'a', 'ba' ]
+return
+
+'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+
+
+/*
+ * Complete the 'maxSubstring' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+function maxSubstring(s) {
+    // Write your code here
+    let singleLetters = [... new Set(s)];
+    let stringCombination = [];
+    let str = s;
+    for(let i=0; i<str.length; i++){
+        if(i!=0){
+            str = str.substring(1);
+        }
+        //splice on index and push to array.
+        if(i<str.length){
+            stringCombination.push(str.slice(i, str.length)); 
+        }
+    }
+    let uniqueCombination = [...singleLetters, ...stringCombination] ;
+    console.log(uniqueCombination);
+    return uniqueCombination;
+}
+
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+    const s = readLine();
+
+    const result = maxSubstring(s);
+
+    ws.write(result + '\n');
+
+    ws.end();
+}
+
+
+=============
+You are inside question view of JavaScript: Inventory List
+
+55m left
+Skip to main content
+ALL
+
+1
+2
+2. JavaScript: Inventory List
+In this challenge, the task is to implement a function inventoryList such that: 
+
+it maintains the collection of all item names existing in an inventory, where each item is uniquely identified by a name.
+
+returns a new object, with three methods:
+
+add(name) - The string name parameter is passed, and it is added to the collection. It is guaranteed that at any time, if an item is in the collection, then no other item with the same name will be added to the collection.
+
+remove(name) - The string name parameter is passed, and this item is removed from the collection if it exists. If it does not exist, nothing happens.
+
+getList() - This returns an array of names of items added so far. The names are returned in the order the corresponding items were added.
+
+ 
+
+Your implementation of the function will be tested by a stubbed code on several input files. Each input file contains parameters for the functions call. The functions will be called with those parameters, and the result of their executions will be printed to the standard output by the provided code. The stubbed code joins the strings returned by getList function by a comma and prints to the standard output. If getList returns an empty array, the stubbed code prints 'No Items'.
+
+ 
+
+Constraints:
+
+The size of the collection will not exceed 10 at any point.
+All names passed to add(name) and remove(name) are non-empty.
+ 
+
+Input Format For Custom Testing
+Sample Case 0
+Sample Input For Custom Testing
+
+5
+add Shirt
+add Trouser
+getList
+remove Shirt
+getList
+Sample Output
+
+Shirt,Trouser
+Trouser
+Explanation
+
+Items 'Shirt' and 'Trouser' are added by the add function. Then, getList is called and the result is printed. Item 'Shirt' is removed by calling the remove function. Finally, getList is called and the result is printed.
+
+Sample Case 1
+Language: JavaScript (Node.js)
+Autocomplete Ready
+
+
+
+
+26272829303132333435363738394041424344454647484950
+'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+  inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+  inputString = inputString.split('\n');
+
+  main();
+});
+
+function readLine() {
+  return inputString[currentLine++];
+}
+function inventoryList() {
+  // write your code here
+}
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+    
+    const obj = inventoryList();
+    const operationCount = parseInt(readLine().trim());
+    
+
+Line: 24 Col: 1
+
+Test Results
+
+Custom Input
+
+Run
+
+
+Submit Code
+return
+
+
+
+
+
+'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+  inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+  inputString = inputString.split('\n');
+
+  main();
+});
+
+function readLine() {
+  return inputString[currentLine++];
+}
+function inventoryList() {
+  // write your code here
+}
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+    
+    const obj = inventoryList();
+    const operationCount = parseInt(readLine().trim());
+    
+    for(let i = 1; i <= operationCount; i++) {
+        const operationInfo = readLine().trim().split(' ');
+        if (operationInfo[0] === 'add') {
+            obj.add(operationInfo[1]);
+        } else if (operationInfo[0] === 'remove') {
+            obj.remove(operationInfo[1]);
+        } else if (operationInfo[0] === 'getList') {
+            const res = obj.getList();
+            if (res.length === 0) {
+                ws.write('No Items\n');
+            } else {
+                ws.write(`${res.join(',')}\n`);
+            }
+        }
+    }
+    ws.end();
+}
+
+
+
+
+'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+
+/*
+ * Complete the 'maxSubstring' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+function maxSubstring(s) {
+    let stringCombination = [];
+    let str = s;
+    for(let i=0; i<str.length; i++){
+        if(i!=0){
+            str = str.substring(1);
+        }
+        stringCombination.push(str);
+        if(i<str.length){
+            stringCombination.push(str.slice(i, str.length)); 
+        }
+    }
+    
+    let sortedCombination = [... new Set(stringCombination.sort())]
+    console.log("sortedCombination", sortedCombination);
+    // find the maximum substring occurence in the set.
+    // alphabetically ordered set?
+    let setA = sortedCombination[sortedCombination.length-1]
+    return setA;
+}
+function main() {
+
+
+
+
+    'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+  inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+  inputString = inputString.split('\n');
+
+  main();
+});
+
+function readLine() {
+  return inputString[currentLine++];
+}
+
+function inventoryList() {
+  let list = [];
+  
+  function add(item){
+    if(list.indexOf(item)<0){
+        list.push(item);
+    }
+  }
+  
+ function remove (item){
+    if(list.indexOf(item)>-1){
+        let pos = list.indexOf(item);
+        list.splice(pos, 1);
+    }
+  }
+  
+  function getList(){
+    return list;
+  }
+  
+  return Object.freeze({add: add, remove: remove, getList:getList});
+}
+
+function main() {
+
+    
+
+
