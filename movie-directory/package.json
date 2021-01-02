@@ -1,0 +1,34 @@
+{
+  "name": "favorite-movie-directory",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cross-env": "5.2.0",
+    "jest-dom": "2.1.0",
+    "jest-junit-reporter": "^1.1.0",
+    "react-dom": "16.5.2",
+    "react-scripts": "2.0.5",
+    "react-test-renderer": "16.5.2",
+    "react-testing-library": "5.2.0",
+    "react": "16.5.2"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "cross-env PORT=8000 react-scripts start",
+    "build": "react-scripts build",
+    "pretest": "npm install",
+    "test": "react-scripts test --noStackTrace",
+    "test:ci": "npm install; cross-env CI=true TEST_REPORT_FILENAME=./unit.xml react-scripts test --verbose --env=jsdom --testResultsProcessor jest-junit-reporter",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {}
+}

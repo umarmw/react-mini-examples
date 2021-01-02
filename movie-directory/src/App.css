@@ -1,0 +1,25 @@
+body {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+#directory-table {
+  margin-top: 15px;
+}
+
+#directory-table td,
+#directory-table th {
+  padding-right: 20px;
+  text-align: left;
+}
