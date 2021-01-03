@@ -1,15 +1,18 @@
 {
-  "name": "leaderboard",
+  "name": "birthday-records",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.5.0",
+    "@material-ui/icons": "^2.0.2",
     "create-react-app": "^1.4.3",
+    "eslint": "^5.4.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "save": "^2.3.1"
+    "save": "^2.3.1",
+    "event-stream": "3.3.4"
   },
   "scripts": {
     "prestart": "npm install",
@@ -22,9 +25,8 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "expect": "^21.2.1",
-    "jest-junit": "^3.3.0",
+    "jest-junit-reporter": "^1.1.0",
     "react-test-renderer": "^16.2.0",
-    "sinon": "^4.1.3",
-    "jest-junit-reporter" : "^1.1.0"
+    "sinon": "^6.1.5"
   }
 }
