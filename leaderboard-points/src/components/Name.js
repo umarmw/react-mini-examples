@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Name = ({}) => (
-  <button className="btn btn-primary name" name="name">Name</button>
+const Name = ({handleClick}) => (
+  <button className="btn btn-primary name" name="name" onClick={handleClick}>Name</button>
 );
 
 export default Name;
